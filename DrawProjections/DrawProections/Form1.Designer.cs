@@ -34,14 +34,17 @@
             this.textBox1lines = new System.Windows.Forms.TextBox();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.radioButton6 = new System.Windows.Forms.RadioButton();
+            this.radioButton5 = new System.Windows.Forms.RadioButton();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton5 = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1draw)).BeginInit();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1draw
@@ -58,7 +61,7 @@
             this.textBox1dots.Location = new System.Drawing.Point(12, 55);
             this.textBox1dots.Multiline = true;
             this.textBox1dots.Name = "textBox1dots";
-            this.textBox1dots.Size = new System.Drawing.Size(110, 331);
+            this.textBox1dots.Size = new System.Drawing.Size(110, 282);
             this.textBox1dots.TabIndex = 1;
             this.textBox1dots.Text = "150, 200, 100\r\n150, 200, 0\r\n150, 0, 100\r\n150, 0, 0\r\n0, 200, 100\r\n0, 200, 0\r\n0, 0," +
     " 100\r\n0, 0, 0";
@@ -78,10 +81,9 @@
             this.textBox1lines.Location = new System.Drawing.Point(137, 55);
             this.textBox1lines.Multiline = true;
             this.textBox1lines.Name = "textBox1lines";
-            this.textBox1lines.Size = new System.Drawing.Size(110, 331);
+            this.textBox1lines.Size = new System.Drawing.Size(110, 282);
             this.textBox1lines.TabIndex = 3;
-            this.textBox1lines.Text = "8, 4\r\n8, 7\r\n8, 6\r\n1, 2\r\n1, 3\r\n1, 5\r\n2, 4\r\n3, 7\r\n3, 4\r\n5, 7\r\n6, 2\r\n8, 4\r\n8, 7\r\n8, " +
-    "6\r\n1, 2\r\n1, 3\r\n1, 5\r\n2, 4\r\n3, 7\r\n3, 4\r\n5, 7\r\n6, 2\r\n6, 5";
+            this.textBox1lines.Text = "8, 4\r\n8, 7\r\n8, 6\r\n1, 2\r\n1, 3\r\n1, 5\r\n2, 4\r\n3, 7\r\n3, 4\r\n5, 7\r\n6, 2\r\n6, 5";
             // 
             // radioButton1
             // 
@@ -97,15 +99,58 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.trackBar1);
+            this.panel1.Controls.Add(this.radioButton6);
             this.panel1.Controls.Add(this.radioButton5);
             this.panel1.Controls.Add(this.radioButton4);
             this.panel1.Controls.Add(this.radioButton3);
             this.panel1.Controls.Add(this.radioButton2);
             this.panel1.Controls.Add(this.radioButton1);
-            this.panel1.Location = new System.Drawing.Point(12, 392);
+            this.panel1.Location = new System.Drawing.Point(12, 343);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(235, 232);
+            this.panel1.Size = new System.Drawing.Size(235, 281);
             this.panel1.TabIndex = 5;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(134, 218);
+            this.trackBar1.Maximum = 20;
+            this.trackBar1.Minimum = -20;
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(95, 56);
+            this.trackBar1.TabIndex = 10;
+            this.trackBar1.Value = 5;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // radioButton6
+            // 
+            this.radioButton6.AutoSize = true;
+            this.radioButton6.Location = new System.Drawing.Point(13, 218);
+            this.radioButton6.Name = "radioButton6";
+            this.radioButton6.Size = new System.Drawing.Size(115, 21);
+            this.radioButton6.TabIndex = 9;
+            this.radioButton6.Text = "Перспектива";
+            this.radioButton6.UseVisualStyleBackColor = true;
+            // 
+            // radioButton5
+            // 
+            this.radioButton5.AutoSize = true;
+            this.radioButton5.Location = new System.Drawing.Point(13, 154);
+            this.radioButton5.Name = "radioButton5";
+            this.radioButton5.Size = new System.Drawing.Size(186, 38);
+            this.radioButton5.TabIndex = 8;
+            this.radioButton5.Text = "Фронтальная \r\nкосоугольная диметрия";
+            this.radioButton5.UseVisualStyleBackColor = true;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(13, 110);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(193, 38);
+            this.radioButton4.TabIndex = 7;
+            this.radioButton4.Text = "Фронтальная \r\nкосоугольная изометрия";
+            this.radioButton4.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
@@ -145,26 +190,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Отрезки между \r\nточками:";
             // 
-            // radioButton4
-            // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(13, 110);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(193, 38);
-            this.radioButton4.TabIndex = 7;
-            this.radioButton4.Text = "Фронтальная \r\nкосоугольная изометрия";
-            this.radioButton4.UseVisualStyleBackColor = true;
-            // 
-            // radioButton5
-            // 
-            this.radioButton5.AutoSize = true;
-            this.radioButton5.Location = new System.Drawing.Point(13, 154);
-            this.radioButton5.Name = "radioButton5";
-            this.radioButton5.Size = new System.Drawing.Size(186, 38);
-            this.radioButton5.TabIndex = 8;
-            this.radioButton5.Text = "Фронтальная \r\nкосоугольная диметрия";
-            this.radioButton5.UseVisualStyleBackColor = true;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,6 +210,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1draw)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,6 +230,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.RadioButton radioButton5;
+        private System.Windows.Forms.RadioButton radioButton6;
+        private System.Windows.Forms.TrackBar trackBar1;
     }
 }
 
