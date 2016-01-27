@@ -10,6 +10,9 @@ namespace DrawProections
     static class Projections
     {
 
+        public static int PerspectiveAngle = 2;
+
+
         /// <summary>
         /// Отрисовка координатных осей и проекции
         /// </summary>
@@ -175,6 +178,35 @@ namespace DrawProections
             dot[0] = dot[0] * 1.1;
 
             dot = RotateDotOZ(dot, 18.6);
+
+            return dot;
+        }
+
+
+        /// <summary>
+        /// Прямоугольная диметрия
+        /// </summary>
+        /// <param name="dot"></param>
+        /// <returns></returns>
+        public static double[] Perspective(double[] dot)
+        {
+            double[] zoomCoefs = { 0.7, 0.7, 0.7 };
+
+            dot = ZoomDot(dot, zoomCoefs);
+
+
+            dot = RotateDotOX(dot, 90);
+            dot = RotateDotOY(dot, 180);
+
+
+            dot[0] = dot[0] * (1 - dot[2] / 200);
+            dot[1] = dot[1] * (1 - dot[2] / 200);
+            dot[2] = dot[2] * (1 - dot[2] / 200);
+
+ 
+            dot = RotateDotOY(dot, PerspectiveAngle);
+            dot = RotateDotOX(dot, 15);
+
 
             return dot;
         }

@@ -49,6 +49,10 @@ namespace DrawProections
             {
                 Projections.DrawLines(g, dots, lines, Projections.FrontalDimetry);
             }
+            else if (radioButton6.Checked)
+            {
+                Projections.DrawLines(g, dots, lines, Projections.Perspective);
+            }
 
         }
 
@@ -95,8 +99,14 @@ namespace DrawProections
 
             return lines;
 
-        } 
-        
+        }
+
         #endregion
+
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            Projections.PerspectiveAngle = trackBar1.Value;
+        }
     }
 }
